@@ -14,7 +14,7 @@
                   </div>
                   <div class="form-group">
                     <label for="isi">Isi</label>
-                    <textarea class="form-control" name="isi" id="isi" placeholder="Masukkan isi" rows="3"><?=set_value('isi');?></textarea>
+                    <textarea class="form-control" name="isi" id="isi" placeholder="Masukkan isi" rows="10"><?=set_value('isi');?></textarea>
                     <?=form_error('isi', '<small class="text-danger">', '</small>')?>
                   </div>
                   <button type="submit" class="btn btn-primary">Submit</button>
