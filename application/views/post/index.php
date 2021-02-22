@@ -3,7 +3,6 @@
 <div class="row">
 <div class="col-md-4 top mt-2 alert alert-<?=$this->session->flashdata('tipe');?>">Post Berhasil <?=$this->session->flashdata('pesan');?></div>
 </div>
-<?= unset($_SESSION['pesan']); ?>
 <?php endif?>
 <div class="row"> 
         <div class="col-md-4 d-flex justify-content-between top mt-2">
