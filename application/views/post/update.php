@@ -15,7 +15,7 @@
                   </div>
                   <div class="form-group">
                     <label for="isi">Isi</label>
-                    <textarea class="form-control" name="isi" id="isi" placeholder="Masukkan isi" ><?= $post['isi'] ?></textarea>
+                    <textarea class="form-control" name="isi" id="isi" placeholder="Masukkan isi" rows="10"><?= $post['isi'] ?></textarea>
                     <?=form_error('isi', '<small class="text-danger">', '</small>')?>
                   </div>
                   <button type="submit" class="btn btn-primary">Update</button>
