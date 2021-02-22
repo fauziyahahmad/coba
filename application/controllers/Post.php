@@ -19,7 +19,7 @@ class Post extends CI_Controller
     $this->load->library('pagination');
 
     //CONFIG
-    $config['base_url'] = 'http://localhost/ci3kp/post/index';
+    $config['base_url'] = 'https://blog-sertif2021.herokuapp.com/post/index';
     // ^ untuk base url paginationnya
 
     if (isset($_POST['submit'])) {
