@@ -174,7 +174,7 @@ class Post extends CI_Controller
 
     public function lihat($id)
     {
-        $data['judul'] = 'Update Post';
+        $data['judul'] = 'Post';
         $data['post'] = $this->Post_model->getPostById($id);
         $this->load->view('templates/header', $data);
         $this->load->view('post/lihat', $data);
