@@ -15,11 +15,7 @@
     </div>
     
     <!-- <hr> -->
-    <div class="row">
-        <div class="col">
-            <?= $this->pagination->create_links(); ?>
-        </div>
-    </div>
+    
 
     <div class="row mt-3">
         <?php if (isset($posts)) : ?>
@@ -36,5 +32,11 @@
                 </div>
             <?php endforeach; ?>
         <?php endif; ?>
+    </div>
+
+    <div class="row">
+        <div class="col">
+            <?= $this->pagination->create_links(); ?>
+        </div>
     </div>
 </div>
