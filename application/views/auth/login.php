@@ -11,12 +11,14 @@
                             <input type="email" name="email" class="form-control" id="email" value="<?= set_value('email'); ?>">
                             <?= form_error('email', '<small class="pl-3 text-danger">', '</small>'); ?>
                             <?= $this->session->flashdata('message'); ?>
+                            <?php $this->session->unset_userdata('message'); ?>
                         </div>
                         <div class="form-group">
                             <label for="password">Password</label>
                             <input type="password" name="password" class="form-control" id="password">
                             <?= form_error('password', '<small class="pl-3 text-danger">', '</small>'); ?>
-                            <?= $this->session->flashdata('message'); ?>
+                            <?= $this->session->flashdata('message2'); ?>
+                            <?php $this->session->unset_userdata('message2'); ?>
                         </div>
                         <button type="submit" class="btn btn-primary">Masuk</button>
                     </form>

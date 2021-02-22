@@ -1,7 +1,9 @@
 <div class="container">
 <?php if ($this->session->flashdata('pesan')):?>
 <div class="row">
-<div class="col-md-4 top mt-2 alert alert-<?=$this->session->flashdata('tipe');?>">Post Berhasil <?=$this->session->flashdata('pesan');?></div>
+    <div class="col-md-4 top mt-2 alert alert-<?=$this->session->flashdata('tipe');?>">Post Berhasil <?=$this->session->flashdata('pesan');?>
+    <?php $this->session->unset_userdata('pesan'); ?>
+    </div>
 </div>
 <?php endif?>
 <div class="row"> 
