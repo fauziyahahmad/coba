@@ -74,12 +74,12 @@ $active_group = 'default';
 $query_builder = TRUE;
 
 $db['default'] = array(
-	'dsn'	=> 'pgsql:host=ec2-18-204-74-74.compute-1.amazonaws.com;port=5432;dbname=d2n9s47nrs0tsh;user=jdqkywzuhwixac;password=faa404ee61d490e61792a0cdac784e7e6338f949b93762b259a8fe7d1027b9df',
-	'hostname' => 'ec2-18-204-74-74.compute-1.amazonaws.com',
-	'username' => 'jdqkywzuhwixac',
-	'password' => 'faa404ee61d490e61792a0cdac784e7e6338f949b93762b259a8fe7d1027b9df',
-	'database' => 'd2n9s47nrs0tsh',
-	'dbdriver' => 'pdo',
+	'dsn'	=> 'mysql:host=localhost;dbname=jogjaitc',
+	'hostname' => 'localhost',
+	'username' => 'root',
+	'password' => '',
+	'database' => 'jogjaitc',
+	'dbdriver' => 'mysqli',
 	'dbprefix' => '',
 	'pconnect' => FALSE,
 	'db_debug' => (ENVIRONMENT !== 'production'),

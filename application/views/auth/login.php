@@ -7,9 +7,9 @@
                     <form method="POST" action="">
                         <h1>Login</h1>
                         <div class="form-group">
-                            <label for="email">Email address</label>
-                            <input type="email" name="email" class="form-control" id="email" value="<?= set_value('email'); ?>">
-                            <?= form_error('email', '<small class="pl-3 text-danger">', '</small>'); ?>
+                            <label for="username">Username</label>
+                            <input type="text" name="username" class="form-control" id="username" value="<?= set_value('username'); ?>">
+                            <?= form_error('username', '<small class="pl-3 text-danger">', '</small>'); ?>
                             <?= $this->session->flashdata('message'); ?>
                             <?php $this->session->unset_userdata('message'); ?>
                         </div>

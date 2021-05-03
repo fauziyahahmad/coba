@@ -14,8 +14,8 @@ class Auth extends CI_Controller
         if (logged_in()) {
             redirect('home');
         }
-        $this->form_validation->set_rules('email', 'Email', 'required|trim|valid_email');
-        $this->form_validation->set_rules('password', 'Password', 'required|trim|min_length[4]');
+        $this->form_validation->set_rules('username', 'Username', 'required|trim');
+        $this->form_validation->set_rules('password', 'Password', 'required|trim');
 
         if ($this->form_validation->run() == false) {
             $data['judul'] = 'Login Page';
@@ -30,8 +30,8 @@ class Auth extends CI_Controller
 
     public function register()
     {
-        $this->form_validation->set_rules('name', 'Name', 'required|trim');
-        $this->form_validation->set_rules('email', 'Email', 'required|trim|valid_email|is_unique[users.email]');
+        
+        $this->form_validation->set_rules('username', 'Username', 'required|trim]');
         $this->form_validation->set_rules('password1', 'Password', 'required|trim|min_length[4]|matches[password2]', [
             'matches' => 'Password does not match!',
             'min_length' => 'Password too short'
@@ -51,16 +51,16 @@ class Auth extends CI_Controller
 
     private function _login()
     {
-        $email = $this->input->post('email');
+        $username = $this->input->post('username');
         $password = $this->input->post('password');
 
-        $user = $this->User_model->getUserByEmail($email);
+        $user = $this->User_model->getUserByUsername($username);
 
         if ($user) {
-            if ($user['is_active'] == 1) {
+           
                 if (password_verify($password, $user['password'])) {
                     $data = [
-                        'email' => $user['email']
+                        'username' => $user['username']
                     ];
                     $this->session->set_userdata($data);
                     redirect('home');
@@ -68,19 +68,13 @@ class Auth extends CI_Controller
                     $this->session->set_flashdata('message2', '<small class=" text-danger">Password salah</small>');
                     redirect('auth');
                 }
-            } else {
-                $this->session->set_flashdata('message', '<small class="text-danger">Email belum diaktivasi</small>');
-                redirect('auth');
-            }
-        } else {
-            $this->session->set_flashdata('message', '<small class=" text-danger">Email belum terdaftar</small>');
-            redirect('auth');
-        }
+            
+        } 
     }
 
     public function logout()
     {
-        $this->session->unset_userdata('email');
+        $this->session->unset_userdata('username');
         redirect('auth');
     }
 

@@ -5,18 +5,17 @@ class User_model extends CI_Model
     public function register()
     {
         $data = [
-            'name' => $this->input->post('name', true),
-            'email' => $this->input->post('email', true),
+            'username' => $this->input->post('username', true),
             'password' => password_hash($this->input->post('password1'), PASSWORD_DEFAULT),
             'is_active' => 1,
             'date_created' => time()
         ];
-        $this->db->insert('users', $data);
+        $this->db->insert('admins', $data);
     }
 
-    public function getUserByEmail($email)
+    public function getUserByUsername($username)
     {
-         return $this->db->get_where('users', ['email' => $email])->row_array();
+         return $this->db->get_where('admins', ['username' => $username])->row_array();
     }
 
 }
